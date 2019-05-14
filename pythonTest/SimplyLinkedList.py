@@ -1,4 +1,5 @@
 #링크드 리스트# get_at 메소드, search 메소드, delete_at 메소드, remote 메소드, get_size 메소드 추가 2019/05/12
+# tail
 class Node:
     
     def __init__(self, data):
@@ -63,22 +64,34 @@ class Simply_linked_list:
     
     
     def delete_at(self, index):
-        node = self.header  # node는 현재 인덱스 0번째인 apple
-        self.size -= 1   # delete 실행시 size 감소
-        for i in range(0,index):  # input된 index만큼 header에서 움직임
-            prev = node
-            node = node.get_next()
+        current = self.header  # node는 현재 인덱스 0번째인 apple
+        #self.size -= 1   # delete 실행시 size 감소
+        if node is None:  
+            return None     
         
-        if index == 0:
-            self.header = self.header.get_next()  #header의 다음을 가져와 header에 저장
-            
-            
         else:
-            #a=node.get_data() # 현재 인덱스 2의 데이터를 가져와라
-            #print(a)
-            prev.set_next(node.get_next()) # 인덱스2의 next를 prev의 다음 next로 지정
+        
+            for i in range(0,index):  # input된 index만큼 header에서 움직임
+                prev = current
+                #print(prev.get_data())
+                current = current.get_next()
+        
+            if index == 0:
+                self.size -= 1
+                self.header = self.header.get_next()  #header의 다음을 가져와 header에 저장
             
-
+            
+            else:
+                #a=node.get_data() # 현재 인덱스 2의 데이터를 가져와라
+                #print(a)
+                prev.set_next(current.get_next()) # 인덱스2의 next를 prev의 다음 next로 지정
+                
+                if current == self.tail:
+                    self.tail = prev  
+                self.size -= 1
+    
+    
+    
     def remove(self,data):
         curr = self.header
         prev = None
@@ -99,6 +112,9 @@ class Simply_linked_list:
         print("현재 데이터 숫자는 ", self.size, "입니다")
         return self.size
      
+    def get_tail(self):
+        print(self.tail.get_data())
+        return self.tail
      
      
 sll=Simply_linked_list()
@@ -117,7 +133,7 @@ else:
     print(node.get_data())
 
 
-sll.delete_at(0)      # index 삭제 
+sll.delete_at(5)      # index 삭제 
 node = sll.search("apple") # 서치 data 찾기
 if node is None:
     print("i did't have it")
@@ -125,5 +141,7 @@ else:
     print(node.get_data())
 
 
-sll.remove("banana") # data 입력으로 삭제
+#sll.remove() # data 입력으로 삭제
 sll.print_list()
+sll.get_tail()
+sll.get_size()
