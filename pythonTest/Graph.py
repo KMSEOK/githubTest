@@ -59,10 +59,6 @@ class Graph:
 ##      a=node.get_data()
 ##      print(a)
 ##              
-              
-              
-          
-
 
 graph = Graph()
 
