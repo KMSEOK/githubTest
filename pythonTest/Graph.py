@@ -36,29 +36,59 @@ class Graph:
   def add_node(self, node):
     self.nodes.append(node)
     
-  
   def bfs(self):
       if len(self.nodes) > 0:
           for node in self.nodes:
               node.set_visited(False)
+              
       queue = []
-      self.nodes[0].set_visited(True)
-      print(self.nodes[0].get_data(),end ="")
-      queue.append(self.nodes[0])
+      self.nodes[2].set_visited(True)
+      print(self.nodes[2].get_data(),end="")
+      queue.append(self.nodes[2])
       while len(queue) > 0:
+          
           current = queue.pop(0)
           neighbors = current.get_neighbors()
           for neighbor in neighbors:
               if not neighbor.get_visited():
                   neighbor.set_visited(True)
-                  print("-",neighbor.get_data(), end="")
+                  print("-",neighbor.get_data(),end="")
                   queue.append(neighbor)
-      #print("")
-                  
-##  def dfs(self):
-##      a=node.get_data()
-##      print(a)
-##              
+      print("")
+                      
+  def dfs(self):
+      if len(self.nodes)>0:
+          for node in self.nodes:
+              node.set_visited(False)
+              
+      stack = []
+      self.nodes[0].set_visited(True)
+      print(self.nodes[0].get_data(),end="")
+      stack.append(self.nodes[0])
+      while len(stack) > 0:
+          neighbors = stack[len(stack)-1].get_neighbors()
+          for neighbor in neighbors:
+              if not neighbor.get_visited():
+                  neighbor.set_visited(True)
+                  print("-",neighbor.get_data(),end="")
+                  stack.append(neighbor)
+                  break
+              else:
+                  stack.pop(len(stack)-1)
+      print("")    
+          
+       
+      
+      
+      
+      
+      
+      
+            
+              
+              
+          
+
 
 graph = Graph()
 
@@ -113,5 +143,5 @@ node_S.add_neighbor(node_G)
 print("[BFS result]")
 graph.bfs()
 
-##print("DFs")
-##graph.dfs()
+print("DFs")
+graph.dfs()
