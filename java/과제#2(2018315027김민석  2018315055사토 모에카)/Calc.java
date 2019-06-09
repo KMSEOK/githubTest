@@ -1,4 +1,3 @@
-
 /**
  *
  *  추상클래스
@@ -7,8 +6,8 @@
  */
 public abstract class Calc
 {
-    private int a;
-    private int b;
-    public abstract void setValue(int a, int b); // 값을 저장
-    public abstract int calculate();
+    int a;
+    int b;
+    abstract void setValue(int a, int b); // 값을 저장
+    abstract int calculate();
 }

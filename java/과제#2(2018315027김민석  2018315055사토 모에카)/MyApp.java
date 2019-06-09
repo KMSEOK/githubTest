@@ -1,6 +1,6 @@
 import java.util.Scanner;
-/**
- * a,b(정수)를 입력해 4칙연산을 하는 프로그램 .
+/** 문제 11
+ *  a,b(정수)를 입력해 4칙연산을 하는 프로그램 .
  *
  * @author (2018315027 김민석,2018315055 사토 모에카)
  * @version (2019/06/05)
@@ -15,26 +15,26 @@ public class MyApp
         String c = scan.next();
 
         if (c.equals("+")){
-            Add add = new Add();
-            add.setValue(a,b);
+            Calc add = new Add(); //업케스팅
+            add.setValue(a,b);  // 동적바인딩
             int sum = add.calculate();
             System.out.println(sum);
         }
         else if(c.equals("-")){
-            Sub sub = new Sub();
-            sub.setValue(a,b);
+            Calc sub = new Sub();  //업케스팅
+            sub.setValue(a,b);  // 동적바인딩
             int subtract = sub.calculate();
             System.out.println(subtract);
         }
         else if (c.equals("*")){
-            Mul mul = new Mul();
-            mul.setValue(a,b);
+            Calc mul = new Mul(); // 업케스팅
+            mul.setValue(a,b);  // 동적바인딩
             int multiply = mul.calculate();
             System.out.println(multiply);
         }
         else if (c.equals("/")){
-            Div div = new Div();
-            div.setValue(a,b);
+            Calc div = new Div(); //업케스팅
+            div.setValue(a,b);  // 동적바인딩
             int division = div.calculate();
             System.out.println(division);
             

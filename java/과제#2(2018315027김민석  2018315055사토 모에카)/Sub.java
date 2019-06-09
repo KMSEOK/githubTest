@@ -5,17 +5,14 @@
  * @(2018315027 김민석,2018315055 사토 모에카)
  * @version (2019/06/05)
  */
-public class Add extends Calc
+public class Sub extends Calc
 {
-    private int a;
-    private int b;
-    public void setValue(int a, int b){
+    void setValue(int a, int b){
         this.a = a;
         this.b = b;
     }
-    public int calculate(){
-        int sum;
-        sum = this.a + this.b;
-        return sum;
+    int calculate(){
+        int sub = this.a - this.b;
+        return sub;
     }
 }

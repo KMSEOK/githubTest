@@ -7,13 +7,11 @@
  */
 public class Mul extends Calc
 {
-    private int a;
-    private int b;
-    public void setValue(int a, int b){
+    void setValue(int a, int b){
         this.a = a;
         this.b = b;
     }
-    public int calculate(){
+    int calculate(){
         int mul =  this.a * this.b;
         return mul;
     }
