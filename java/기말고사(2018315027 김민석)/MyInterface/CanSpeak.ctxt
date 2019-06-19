@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=CanSpeak
+comment0.text=\r\n\ Write\ a\ description\ of\ interface\ CanSpeak\ here.\r\n\r\n\ @author\ (2018315027\ \uAE40\uBBFC\uC11D)\r\n\ @version\ (2019/06/19)\r\n
+comment1.params=
+comment1.target=void\ say()
+numComments=2
